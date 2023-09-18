@@ -106,7 +106,7 @@
                             </a>    
 
                         <div class="login-register">
-                            <p>Already have an account? lmao
+                            <p>Already have an account?
                                 <a href="#" class="login-link">Sign In </a>
                             </p>
                         </div>
@@ -145,6 +145,7 @@
         const database = getDatabase(app);
         const auth = getAuth();
         const signUpButton = document.getElementById('SignUp');
+        const logregBox = document.querySelector('.logreg-box');
 
         signUpButton.addEventListener('click',(e) => {
             e.preventDefault();
@@ -161,10 +162,12 @@
 
                     set(ref(database, 'users/' + user.uid), {
                         username : username,
-                        email: email
+                        email: email,
+                        password : password
                     });   
 
                     alert('User created!');
+                    logregBox.classList.remove('active');
                     // ...
                     
                 })
