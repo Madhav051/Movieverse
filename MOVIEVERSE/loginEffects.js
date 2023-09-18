@@ -2,6 +2,9 @@ const logregBox = document.querySelector('.logreg-box');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 
+// document.getElementById('signup-btn').addEventListener('click', function(event){
+//     event.preventDefault()
+
 registerLink.addEventListener('click', ()=>{
     logregBox.classList.add('active');
 });
