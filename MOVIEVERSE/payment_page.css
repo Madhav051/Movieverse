@@ -148,6 +148,11 @@ input[type="submit"]:hover {
     background: #2c3e50;
 }
 
+.options{
+    background-color: gray;
+    opacity: 100%;
+}
+
 .Info {
     position: absolute; /* Position the bottom div absolutely */
     bottom: 0; /* Align it to the bottom of the container */
