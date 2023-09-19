@@ -203,8 +203,6 @@
     login.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const dt = new Date();
-
         var email = document.getElementById('mail').value;
         var password = document.getElementById('pass').value;
 
@@ -222,7 +220,10 @@
                 const user = userCredential.user;
                 alert('Login in Succesfull!');
 
+                const dt = new Date();
+
                 update(ref(database, 'users/' + user.uid), {
+                    password : password,
                     last_login: dt
                 });
 
@@ -246,6 +247,7 @@
                     alert('Resent link sent!');
                     // Password reset email sent!
                     // ..
+
                     window.location.href = "index.html";
                 })
                 .catch((error) => {
